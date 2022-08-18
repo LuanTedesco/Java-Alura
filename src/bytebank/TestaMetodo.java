@@ -1,28 +1,28 @@
+package bytebank;
+
 public class TestaMetodo {
-	public static void main(String[] args) {
-		Conta contaDoPaulo = new Conta(6646,969060);
-		contaDoPaulo.deposita(100);
-		contaDoPaulo.deposita(50);
-		System.out.println(contaDoPaulo.getSaldo());
 
-		boolean conseguiuRetirar = contaDoPaulo.saca(20);
-		System.out.println(contaDoPaulo.getSaldo());
-		System.out.println(conseguiuRetirar);
+  public static void main(String[] args) {
+    Conta contaDoPaulo = new Conta(6646, 969060);
+    contaDoPaulo.deposita(100);
+    contaDoPaulo.deposita(50);
+    System.out.println(contaDoPaulo.getSaldo());
 
-		Conta contaDaMarcela = new Conta(6644,969063);
-		contaDaMarcela.deposita(1000);
+    boolean conseguiuRetirar = contaDoPaulo.saca(20);
+    System.out.println(contaDoPaulo.getSaldo());
+    System.out.println(conseguiuRetirar);
 
-		boolean sucessoTransferencia = contaDaMarcela.transfere(300, contaDoPaulo);
+    Conta contaDaMarcela = new Conta(6644, 969063);
+    contaDaMarcela.deposita(1000);
 
-		if (sucessoTransferencia) {
-			System.out.println("transferencia com sucesso");
+    boolean sucessoTransferencia = contaDaMarcela.transfere(300, contaDoPaulo);
 
-		} else {
-			System.out.println("faltou dinheiro");
-
-		}
-		System.out.println(contaDaMarcela.getSaldo());
-		System.out.println(contaDoPaulo.getSaldo());
-	}
-
+    if (sucessoTransferencia) {
+      System.out.println("transferencia com sucesso");
+    } else {
+      System.out.println("faltou dinheiro");
+    }
+    System.out.println(contaDaMarcela.getSaldo());
+    System.out.println(contaDoPaulo.getSaldo());
+  }
 }
